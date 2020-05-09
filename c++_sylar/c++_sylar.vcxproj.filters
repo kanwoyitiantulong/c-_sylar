@@ -13,6 +13,9 @@
     <Filter Include="test">
       <UniqueIdentifier>{0592074f-5225-4918-9262-0af0ed993813}</UniqueIdentifier>
     </Filter>
+    <Filter Include="syncSignal">
+      <UniqueIdentifier>{2b85f361-c404-41c9-bd4a-f009d62a6710}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="log.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="test_thread.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="syncSignal.cpp">
+      <Filter>syncSignal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="log.h">
@@ -61,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="thread.h">
       <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="syncSignal.h">
+      <Filter>syncSignal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

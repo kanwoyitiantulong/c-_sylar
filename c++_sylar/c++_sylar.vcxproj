@@ -67,6 +67,7 @@
     <ClCompile Include="logEvent.cpp" />
     <ClCompile Include="logFormat.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="syncSignal.cpp" />
     <ClCompile Include="test_thread.cpp" />
     <ClCompile Include="thread.cpp" />
   </ItemGroup>
@@ -77,6 +78,7 @@
     <ClInclude Include="logEvent.h" />
     <ClInclude Include="logFormat.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="syncSignal.h" />
     <ClInclude Include="thread.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
