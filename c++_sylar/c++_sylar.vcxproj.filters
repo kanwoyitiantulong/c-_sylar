@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="log">
+      <UniqueIdentifier>{53aac04b-8995-40df-bbb4-051cb0ebde2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{0b440b39-d91f-4f0d-bff8-1371650b6cb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{0ee0ef17-b95a-4cca-bf5d-a05198b0ddc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{0592074f-5225-4918-9262-0af0ed993813}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="log.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="logAppender.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="logEvent.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="logFormat.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>config</Filter>
+    </ClCompile>
+    <ClCompile Include="thread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="test_thread.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="log.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="logAppender.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="logEvent.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="logFormat.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>config</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
