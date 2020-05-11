@@ -62,17 +62,19 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="config.cpp" />
+    <ClCompile Include="fiber.cpp" />
     <ClCompile Include="log.cpp" />
     <ClCompile Include="logAppender.cpp" />
     <ClCompile Include="logEvent.cpp" />
     <ClCompile Include="logFormat.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="syncSignal.cpp" />
-    <ClCompile Include="test_thread.cpp" />
+    <ClCompile Include="test_fiber.cpp" />
     <ClCompile Include="thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h" />
+    <ClInclude Include="fiber.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="logAppender.h" />
     <ClInclude Include="logEvent.h" />

@@ -14,6 +14,7 @@ namespace sylar {
 		if (ret) {
 			std::cout << "creat thread error;" << std::endl;
 		}
+		m_semaphore.wait();
 	}
 	thread::~thread() {
 		pthread_detach(m_thread);
@@ -46,6 +47,7 @@ namespace sylar {
 		pthread_setname_np(t_thread->m_thread, t_thread->m_name.substr(0,15).c_str());
 		thread::cb func;
 		func.swap(t_thread->m_cb);
+		t_thread->m_semaphore.notify();
 		func();
 		return 0;
 	}

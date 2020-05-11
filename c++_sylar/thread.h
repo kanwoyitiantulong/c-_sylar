@@ -6,6 +6,8 @@
 #include<memory>
 #include<functional>
 #include<string>
+
+#include "syncSignal.h"
 namespace sylar {
 	class thread {
 	public:
@@ -30,5 +32,7 @@ namespace sylar {
 		std::string m_name;
 		pthread_t m_thread;
 		cb m_cb;
+
+		semaphore m_semaphore=semaphore(0);
 	};
 }

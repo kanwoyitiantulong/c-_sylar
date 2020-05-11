@@ -16,6 +16,9 @@
     <Filter Include="syncSignal">
       <UniqueIdentifier>{2b85f361-c404-41c9-bd4a-f009d62a6710}</UniqueIdentifier>
     </Filter>
+    <Filter Include="fiber">
+      <UniqueIdentifier>{b58b2c8d-4c03-4bb6-b4ab-768baa554adf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="log.cpp">
@@ -39,11 +42,14 @@
     <ClCompile Include="thread.cpp">
       <Filter>thread</Filter>
     </ClCompile>
-    <ClCompile Include="test_thread.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="syncSignal.cpp">
       <Filter>syncSignal</Filter>
+    </ClCompile>
+    <ClCompile Include="fiber.cpp">
+      <Filter>fiber</Filter>
+    </ClCompile>
+    <ClCompile Include="test_fiber.cpp">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="syncSignal.h">
       <Filter>syncSignal</Filter>
+    </ClInclude>
+    <ClInclude Include="fiber.h">
+      <Filter>fiber</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
