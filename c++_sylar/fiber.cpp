@@ -66,6 +66,7 @@ namespace sylar {
 	void fiber::run(void *args) {
 		fiber *l_fiber = (fiber*)args;
 		l_fiber->m_func();
+		l_fiber->m_state = TERM;
 		l_fiber->swapout();
 	}
 

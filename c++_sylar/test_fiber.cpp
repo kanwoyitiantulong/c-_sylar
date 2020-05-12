@@ -7,6 +7,9 @@
 void test() {
 	sleep(2);
 	std::cout << "hello fiber" << std::endl;
+	sylar::fiber::YaloutHold();
+	std::cout << "after YaloutHold" << std::endl;
+	sylar::fiber::YaloutReady();
 	//sylar::fiber::YalOut();
 }
 void testFiber() {
@@ -14,6 +17,9 @@ void testFiber() {
 	sylar::fiber::ptr m_fiber = sylar::fiber::getThis();
 	sylar::fiber::ptr f_fiber = sylar::fiber::ptr(new sylar::fiber(test, 1024));
 	f_fiber->swapin();
+	std::cout << "after swapin....." << std::endl;
+	f_fiber->swapin();
+
 	std::cout << "end....." << std::endl;
 }
 int main() {

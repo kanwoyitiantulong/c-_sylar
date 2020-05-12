@@ -30,7 +30,7 @@ namespace sylar {
 		};
 
 		fiber();
-		fiber(cbFunc cb,int s_size);
+		fiber(cbFunc cb,int s_size=1024);
 		~fiber();
 		void setFunc(cbFunc f);
 		void setThisContext(std::shared_ptr<fiber> ptr);

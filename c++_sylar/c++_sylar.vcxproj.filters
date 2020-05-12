@@ -19,6 +19,9 @@
     <Filter Include="fiber">
       <UniqueIdentifier>{b58b2c8d-4c03-4bb6-b4ab-768baa554adf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="schedule">
+      <UniqueIdentifier>{e03d3ad8-e51d-4ffb-8d44-7d1e2fe7e5ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="log.cpp">
@@ -51,6 +54,9 @@
     <ClCompile Include="test_fiber.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="schedule.cpp">
+      <Filter>schedule</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="log.h">
@@ -79,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="fiber.h">
       <Filter>fiber</Filter>
+    </ClInclude>
+    <ClInclude Include="schedule.h">
+      <Filter>schedule</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

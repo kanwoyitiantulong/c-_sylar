@@ -68,6 +68,7 @@
     <ClCompile Include="logEvent.cpp" />
     <ClCompile Include="logFormat.cpp" />
     <ClCompile Include="logger.cpp" />
+    <ClCompile Include="schedule.cpp" />
     <ClCompile Include="syncSignal.cpp" />
     <ClCompile Include="test_fiber.cpp" />
     <ClCompile Include="thread.cpp" />
@@ -80,6 +81,7 @@
     <ClInclude Include="logEvent.h" />
     <ClInclude Include="logFormat.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="schedule.h" />
     <ClInclude Include="syncSignal.h" />
     <ClInclude Include="thread.h" />
   </ItemGroup>

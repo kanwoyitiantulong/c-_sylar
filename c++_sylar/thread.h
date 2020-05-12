@@ -8,8 +8,9 @@
 #include<string>
 
 #include "syncSignal.h"
+#include <memory>
 namespace sylar {
-	class thread {
+	class thread:std::enable_shared_from_this<thread> {
 	public:
 		//ÀàÖÇÄÜÖ¸Õë
 		typedef std::shared_ptr<thread> ptr;
