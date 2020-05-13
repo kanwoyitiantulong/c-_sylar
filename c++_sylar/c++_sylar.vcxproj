@@ -70,7 +70,7 @@
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="schedule.cpp" />
     <ClCompile Include="syncSignal.cpp" />
-    <ClCompile Include="test_fiber.cpp" />
+    <ClCompile Include="test_schedule.cpp" />
     <ClCompile Include="thread.cpp" />
   </ItemGroup>
   <ItemGroup>

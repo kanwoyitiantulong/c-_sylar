@@ -28,6 +28,7 @@ namespace sylar {
 		void join();
 
 		static void* thread_run(void *arg);
+		static pid_t GetThreadId();
 	private:
 		pid_t m_id;
 		std::string m_name;

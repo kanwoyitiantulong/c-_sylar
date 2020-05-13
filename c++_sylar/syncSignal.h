@@ -21,6 +21,7 @@ namespace sylar {
 
 	private:
 		sem_t m_sem;
+		unsigned int con;
 	};
 	class Mutex {
 		/***

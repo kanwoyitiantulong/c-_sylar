@@ -1,8 +1,8 @@
 #include "syncSignal.h"
 #include <iostream>
 namespace sylar {
-	semaphore::semaphore(unsigned int count) {
-		if (sem_init(&m_sem, 0, count)) {
+	semaphore::semaphore(unsigned int count):con(count){
+		if (sem_init(&m_sem, 0, con)) {
 			std::cout << "init sem error" << std::endl;
 		}
 	}

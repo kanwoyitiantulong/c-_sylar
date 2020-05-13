@@ -52,4 +52,8 @@ namespace sylar {
 		return 0;
 	}
 
+	pid_t thread::GetThreadId() {
+		syscall(SYS_gettid);
+	}
+
 }

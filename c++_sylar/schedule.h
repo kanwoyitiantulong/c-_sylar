@@ -25,6 +25,8 @@ namespace sylar {
 		void stop();
 		void run();
 		void tickle();
+		void ideal();
+		void test_run();
 
 		template<class T>
 		void scheduler(T var, int id = -1) {
@@ -49,6 +51,7 @@ namespace sylar {
 
 		struct funcAndFiber
 		{
+			typedef std::shared_ptr<funcAndFiber> ptr;
 			sylar::fiber::ptr m_fiber=nullptr;
 			Func m_func=nullptr;
 			int threadId=-1;
@@ -60,6 +63,11 @@ namespace sylar {
 			funcAndFiber(Func f, int id):threadId(id) {
 				threadId = id;
 				m_func.swap(f);
+			}
+			funcAndFiber() {
+				m_fiber = nullptr;
+				m_func = nullptr;
+				threadId = -1;
 			}
 			void reser() {
 				if (m_fiber)m_fiber = nullptr;
@@ -73,6 +81,7 @@ namespace sylar {
 			}
 
 		};
+
 	private:
 		std::atomic<int> threadNum{0};			//线程总数
 		std::atomic<int> activeThreadNum{ 0 };	//活跃线程数
@@ -85,5 +94,7 @@ namespace sylar {
 		bool isStoped;
 		bool isAutoStoping;
 
+		sylar::semaphore  m_sema;
+		sylar::Mutex  m_mutex;
 	};
 }

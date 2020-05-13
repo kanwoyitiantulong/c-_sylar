@@ -51,11 +51,11 @@
     <ClCompile Include="fiber.cpp">
       <Filter>fiber</Filter>
     </ClCompile>
-    <ClCompile Include="test_fiber.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="schedule.cpp">
       <Filter>schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="test_schedule.cpp">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
