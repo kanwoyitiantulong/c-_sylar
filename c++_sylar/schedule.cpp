@@ -12,16 +12,10 @@ namespace sylar {
 
 	schedule::schedule(int threadNum, bool use_caller, const std::string &name):m_name(name), m_sema(0){
 		if (use_caller) {//当前线程参与调度
-			//semaphore se(1);
-
-		//	m_sema=sylar::semaphore(1);
 			sylar::fiber::getThis();
 			thread_schedule = this;
-			//main_fiber.reset(new sylar::fiber(std::bind(&schedule::run, this)));
-			//current_fiber = main_fiber;
 			threadNum--;
 			this->threadNum = threadNum;
-			//vec.push_back(syscall(SYS_gettid));
 		}
 		else {
 		
@@ -37,10 +31,8 @@ namespace sylar {
 		}
 		activeThreadNum.store(threadNum);
 	}
+
 	void schedule::stop() {
-//		for (int i = 0;i < m_func.size();i++) {
-//			tickle();
-//		}
 		for (int i = 0;i < vec.size();i++) {
 			tickle();
 		}
@@ -50,6 +42,12 @@ namespace sylar {
 			vec[i]->join();
 		}
 	}
+	void schedule::setThis() {
+		thread_schedule = this;
+	}
+	schedule * schedule::getThis() {
+		return thread_schedule;
+	}
 	void schedule::ideal() {
 		std::cout << "thread is idealing" << std::endl;
 		while (true) {
@@ -57,7 +55,6 @@ namespace sylar {
 			std::cout << "got sem\t" << sylar::thread::GetThreadId() << std::endl;
 			sylar::fiber::YaloutReady();
 		}
-	//	
 	}
 	void schedule::test_run() {
 		while (1) {
@@ -71,8 +68,8 @@ namespace sylar {
 		funcAndFiber l_var;
 		while (true) 
 		{
-			idealFiber->swapin();
 			if (isAutoStoping)break;
+			idealFiber->swapin();
 			{
 				MutexGuard<sylar::Mutex> mu(m_mutex);
 				if (!m_func.empty()) {
@@ -85,6 +82,7 @@ namespace sylar {
 						}
 						it++;
 					}
+					if (it == m_func.end())continue;
 				}
 				else {
 					std::cout << "not got work continue" << std::endl;

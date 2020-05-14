@@ -24,7 +24,7 @@ namespace sylar {
 		m_stack = malloc(s_size);
 		m_ucp.uc_stack.ss_sp = m_stack;
 		m_ucp.uc_stack.ss_size = s_size;
-		makecontext(&m_ucp, (void(*)(void))run,1, this);
+		makecontext(&m_ucp, (void(*)(void))run,2, this,2);
 		m_state = INIT;
 		std::cout << "creat fiber" << std::endl;
 		//setThisContext(shared_from_this());
@@ -65,7 +65,8 @@ namespace sylar {
 		fib->m_state = INIT;
 	}
 
-	void fiber::run(void *args) {
+	void fiber::run(void *args, int argc) {
+		std::cout << "argc:\t" << argc << std::endl;
 		fiber *l_fiber = (fiber*)args;
 		l_fiber->m_func();
 		l_fiber->m_state = TERM;
@@ -80,7 +81,6 @@ namespace sylar {
 	}
 	void fiber::swapout() {
 		setThisContext(main_fiber->shared_from_this());
-		m_state = READY;
 		swapcontext(&m_ucp, &main_fiber->m_ucp);
 	}
 

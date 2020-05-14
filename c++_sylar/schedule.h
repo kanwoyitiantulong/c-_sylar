@@ -21,29 +21,38 @@ namespace sylar {
 		typedef std::function<void()> Func;
 		schedule(int threadNum,bool use_caller=true,const std::string &name="root");
 		~schedule();
-		void start();
-		void stop();
-		void run();
-		void tickle();
-		void ideal();
+		void start();		
+		void run();	
 		void test_run();
+		void setThis();
+		static schedule * getThis();
+
+
+		virtual void stop();
+		virtual void tickle();
+		virtual void ideal();
 
 		template<class T>
 		void scheduler(T var, int id = -1) {
-			bool needTickle=scheFuncAndFiber(var, id);
-			if (needTickle)tickle();
+			{
+				MutexGuard<sylar::Mutex> mu(m_mutex);
+				bool needTickle = scheFuncAndFiber(var, id);
+				if (needTickle)tickle();
+			}
 		}
 
 		template<class T>
 		void multischeduler(T begin, T end) {
-			for (auto it = begin;it != end;it++) {
-				scheFuncAndFiber(*it, it->id);
+			{
+				MutexGuard<sylar::Mutex> mu(m_mutex);
+				for (auto it = begin;it != end;it++) {
+					bool needTickle=scheFuncAndFiber(*it, it->id);
+					if (needTickle)tickle();
+				}
 			}
-			tickle();
 		}
 		template<class T>
 		bool scheFuncAndFiber(T var, int id) {
-			//bool needTickle = m_func.empty();
 			m_func.push_back(funcAndFiber(var, id));
 			bool needTickle = !m_func.empty();
 			return needTickle;
@@ -87,6 +96,7 @@ namespace sylar {
 		std::atomic<int> activeThreadNum{ 0 };	//活跃线程数
 		std::atomic<int> m_funcNum{ 0 };		//任务数量
 		std::vector<thread::ptr> vec;			//线程队列
+		std::vector<pid_t> vec_id;				//线程id队列
 		std::list<funcAndFiber> m_func;			//任务链表
 
 		std::string m_name;

@@ -8,6 +8,10 @@
 
 void test() {
 	std::cout << "test schedule" << sylar::thread::GetThreadId()<< std::endl;
+	sleep(1);
+}
+void test1(int count) {
+	std::cout << "test1:\t" << count << std::endl;
 }
 
 int main() {
@@ -15,6 +19,7 @@ int main() {
 	shcedule_t->start();
 	sleep(10);
 	shcedule_t->scheduler(test);
+	shcedule_t->scheduler(std::bind(test1,1));
 
 	std::cout << "***********" << std::endl;
 	sleep(20);

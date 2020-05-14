@@ -41,13 +41,12 @@ namespace sylar {
 
 		static std::shared_ptr<fiber> getThis();
 		static int getFiberCount();
-//		static void YalIn();
 		static void YaloutReady();
 		static void YaloutHold();
 		static void YalOut();
 
 		static int swapContext();
-		static void run(void *args);
+		static void run(void *args, int argc);
 		
 	private:
 		ucontext_t	m_ucp;

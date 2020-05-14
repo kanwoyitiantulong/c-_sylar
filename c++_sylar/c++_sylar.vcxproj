@@ -63,6 +63,7 @@
   <ItemGroup>
     <ClCompile Include="config.cpp" />
     <ClCompile Include="fiber.cpp" />
+    <ClCompile Include="IOManager.cpp" />
     <ClCompile Include="log.cpp" />
     <ClCompile Include="logAppender.cpp" />
     <ClCompile Include="logEvent.cpp" />
@@ -76,6 +77,7 @@
   <ItemGroup>
     <ClInclude Include="config.h" />
     <ClInclude Include="fiber.h" />
+    <ClInclude Include="IOManager.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="logAppender.h" />
     <ClInclude Include="logEvent.h" />

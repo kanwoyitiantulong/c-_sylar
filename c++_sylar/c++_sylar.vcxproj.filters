@@ -22,6 +22,9 @@
     <Filter Include="schedule">
       <UniqueIdentifier>{e03d3ad8-e51d-4ffb-8d44-7d1e2fe7e5ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="IOManager">
+      <UniqueIdentifier>{b26259c3-151d-4da5-b381-de00a4ffccee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="log.cpp">
@@ -57,6 +60,9 @@
     <ClCompile Include="test_schedule.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="IOManager.cpp">
+      <Filter>IOManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="log.h">
@@ -88,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="schedule.h">
       <Filter>schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="IOManager.h">
+      <Filter>IOManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
